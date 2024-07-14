@@ -5,6 +5,7 @@
     "description": "Azure Pipelines Tasks for HashiCorp Nomad",
     "version": "0.1.0",
     "publisher": "sevensolutions",
+    "public": true,
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
