@@ -1,0 +1,9 @@
+node_modules/
+build
+Tasks/**/*.js
+.taskkey
+configs/self.json
+*.vsix
+.DS_Store
+.bin/
+.dist/

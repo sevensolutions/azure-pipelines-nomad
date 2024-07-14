@@ -1,0 +1,65 @@
+{
+    "manifestVersion": 1,
+    "id": "hashicorp-nomad",
+    "name": "HashiCorp Nomad",
+    "description": "Azure Pipelines Tasks for HashiCorp Nomad",
+    "version": "0.1.0",
+    "publisher": "sevensolutions",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "branding": {
+        "color": "#FFFFFF",
+        "theme": "light"
+    },
+    "icons": {
+        "default": "images/icon.png",
+        "large": "images/icon.png"
+    },
+    "repository" : {
+        "type" : "git",
+        "uri" : "https://github.com/sevensolutions/azure-pipelines-nomad"
+    },
+    "links": {
+        "support": {
+            "uri": "https://github.com/sevensolutions/azure-pipelines-nomad/issues"
+        },
+        "license": {
+            "uri": "https://github.com/sevensolutions/azure-pipelines-nomad/blob/main/LICENSE"
+        }
+    },
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
+    "files": [
+        {
+            "path": "tasks/nomad-installer/",
+            "packagePath": "NomadInstaller"
+        }
+    ],
+    "tags" : [
+        "hashicorp", "nomad"
+    ],
+    "contributions": [
+        {
+            "id": "nomad-installer",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "NomadInstaller",
+                "supportsTasks": [
+                    "a2526782-2360-431d-9466-cb77a6a2b53e"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "id": "hashicorp-nomad-dev",
+    "name": "HashiCorp Nomad (Dev)",
+    "galleryFlags": [
+        "Preview"
+    ],
+    "public": false
+}

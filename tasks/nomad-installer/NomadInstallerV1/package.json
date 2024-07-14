@@ -1,0 +1,28 @@
+{
+  "name": "azure-pipelines-nomad",
+  "version": "0.1.0",
+  "description": "Azure Pipelines Tasks for HashiCorp Nomad",
+  "author": "sevensolutions",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "pack": "copyfiles package.json task.json icon.png \".bin/*.js\" .dist && cd .dist && npm install --only=prod",
+    "start": "ts-node --require dotenv/config ./src/index.ts"
+  },
+  "dependencies": {
+    "azure-devops-node-api": "^14.0.1",
+    "azure-pipelines-task-lib": "^4.13.0",
+    "azure-pipelines-tool-lib": "^2.0.7",
+    "https-proxy-agent": "^7.0.5",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.10",
+    "@types/q": "^1.5.8",
+    "copyfiles": "^2.4.1",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "azure-pipelines-nomad",
+  "version": "0.1.0",
+  "description": "Azure Pipelines Tasks for HashiCorp Nomad",
+  "author": "sevensolutions",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "pack:nomad-installer": "cd ./tasks/nomad-installer/NomadInstallerV1 && npm run build && npm run pack",
+    "pack:all": "npm run pack:nomad-installer",
+    "package": "tfx extension create --manifest-globs vss-extension.json",
+    "package:dev": "tfx extension create --manifest-globs vss-extension.json --overrides-file ./vss-extension-dev.json",
+    "publish": "npm install --include:dev && npm run pack:all && npm run package",
+    "publish:dev": "npm install --include:dev && npm run pack:all && npm run package:dev"
+  },
+  "devDependencies": {
+    "tfx-cli": "^0.17.0"
+  }
+}

@@ -1,0 +1,56 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "a2526782-2360-431d-9466-cb77a6a2b53e",
+    "name": "NomadInstaller",
+    "friendlyName": "Nomad tool installer",
+    "description": "Install HashiCorp Nomad CLI",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "sevensolutions",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "instanceNameFormat": "Install Nomad $(version)",
+    "inputs": [
+        {
+            "name": "version",
+            "type": "string",
+            "label": "Version",
+            "defaultValue": "latest",
+            "required": true,
+            "helpMarkDown": "The version of Nomad which should be installed on the agent if not already present"
+        }
+    ],
+    "outputVariables": [
+        {
+            "name": "binaryLocation",
+            "description": "The location of the nomad binary that was installed on the agent."
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": ".bin/index.js"
+        },
+        "Node10": {
+            "target": ".bin/index.js"
+        },
+        "Node16": {
+            "target": ".bin/index.js"
+        }
+    },
+    "messages": {
+        "SearchingVersion": "Searching version %s ...",
+        "VersionNotFound": "Unable to find version %s",
+        "BuildNotFoundInRelease": "The product doesn't support the platform %s on architecture %s",
+        "DownloadFailed": "Failed to download Nomad from url %s. Error %s",
+
+        "ExecutableNotFoundInFolder": "Executable not found in path %s",
+        "VerifyInstallation": "Verifying Nomad installation..."
+    }
+}
